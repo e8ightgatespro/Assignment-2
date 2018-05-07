@@ -48,6 +48,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         txtClubCity.text = ""
         txtClubState.text = ""
         txtClubZip.text = ""
+
     }
     
     @IBAction func CancelClub(_ sender: Any) {
