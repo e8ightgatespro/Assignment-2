@@ -23,28 +23,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
-        let textFields: [UITextField] = [txtClubName, txtClubStreet, txtClubCity, txtClubState, txtClubZip]
-        
-        for textfield in textFields {
-            textfield.addTarget(self, action: #selector(UITextFieldDelegate.textFieldShouldEndEditing(_:)), for: UIControlEvents.editingDidEnd)
-         }
- */
     }
     
-
-   /*
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        currentClub?.name = txtClubName.text
-        currentClub?.streetAddress = txtClubStreet.text
-        currentClub?.city = txtClubCity.text
-        currentClub?.state = txtClubState.text
-        currentClub?.zipcode = txtClubZip.text
-        return true
-        }
-    */
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -61,6 +41,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         currentClub?.beer = "0"
         currentClub?.wine = "0"
         currentClub?.music = "0"
+        currentClub?.average = "0"
         appDelegate.saveContext()
         txtClubName.text = ""
         txtClubStreet.text = ""

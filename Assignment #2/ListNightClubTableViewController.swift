@@ -62,7 +62,7 @@ class ListNightClubTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClubCell", for: indexPath)
         let club = clubs[indexPath.row] as? NightClub
         cell.textLabel?.text = club?.name
-        cell.detailTextLabel?.text = club?.city
+        cell.detailTextLabel?.text = "Avg. Rating: \(club!.average ?? "0")"
         cell.accessoryType = UITableViewCellAccessoryType.detailDisclosureButton
         return cell
     }
@@ -121,14 +121,19 @@ class ListNightClubTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "RateClub" {
+            let rateController = segue.destination as? NightClubRatingViewController
+            let selectedRow = self.tableView.indexPath(for: sender as! UITableViewCell)?.row
+            let selectedClub = clubs[selectedRow!] as? NightClub
+            rateController?.currentClub = selectedClub!
+            
+        }
     }
-    */
+    
 
 }

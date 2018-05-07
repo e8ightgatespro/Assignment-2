@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E05B54220A0EA7D00829CEB /* MapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E05B54120A0EA7D00829CEB /* MapPoint.swift */; };
 		4E81904520A0950D00610148 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E81904420A0950D00610148 /* AppDelegate.swift */; };
 		4E81904720A0950D00610148 /* NewNightclubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E81904620A0950D00610148 /* NewNightclubViewController.swift */; };
 		4E81904A20A0950D00610148 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E81904820A0950D00610148 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E05B54120A0EA7D00829CEB /* MapPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPoint.swift; sourceTree = "<group>"; };
 		4E81904120A0950D00610148 /* Assignment #2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Assignment #2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E81904420A0950D00610148 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E81904620A0950D00610148 /* NewNightclubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNightclubViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				4E81905B20A0A51000610148 /* NightClubRatingViewController.swift */,
 				4E81905D20A0A53200610148 /* NightClubMapViewController.swift */,
 				4E81905F20A0A5A100610148 /* ListNightClubTableViewController.swift */,
+				4E05B54120A0EA7D00829CEB /* MapPoint.swift */,
 			);
 			path = "Assignment #2";
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E81906020A0A5A100610148 /* ListNightClubTableViewController.swift in Sources */,
+				4E05B54220A0EA7D00829CEB /* MapPoint.swift in Sources */,
 				4E81904720A0950D00610148 /* NewNightclubViewController.swift in Sources */,
 				4E81905C20A0A51000610148 /* NightClubRatingViewController.swift in Sources */,
 				4E81904D20A0950D00610148 /* Assignment__2.xcdatamodeld in Sources */,
