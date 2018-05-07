@@ -7,19 +7,74 @@
 //
 
 import UIKit
+import CoreData
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
+    
+    var currentClub: NightClub?
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    @IBOutlet weak var txtClubName: UITextField!
+    @IBOutlet weak var txtClubStreet: UITextField!
+    @IBOutlet weak var txtClubCity: UITextField!
+    @IBOutlet weak var txtClubState: UITextField!
+    @IBOutlet weak var txtClubZip: UITextField!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        /*
+        let textFields: [UITextField] = [txtClubName, txtClubStreet, txtClubCity, txtClubState, txtClubZip]
+        
+        for textfield in textFields {
+            textfield.addTarget(self, action: #selector(UITextFieldDelegate.textFieldShouldEndEditing(_:)), for: UIControlEvents.editingDidEnd)
+         }
+ */
     }
+    
+
+   /*
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        currentClub?.name = txtClubName.text
+        currentClub?.streetAddress = txtClubStreet.text
+        currentClub?.city = txtClubCity.text
+        currentClub?.state = txtClubState.text
+        currentClub?.zipcode = txtClubZip.text
+        return true
+        }
+    */
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func SaveClub(_ sender: Any) {
+        let context = appDelegate.persistentContainer.viewContext
+        currentClub = NightClub(context: context)
+        currentClub?.name = txtClubName.text
+        currentClub?.streetAddress = txtClubStreet.text
+        currentClub?.city = txtClubCity.text
+        currentClub?.state = txtClubState.text
+        currentClub?.zipcode = txtClubZip.text
+        currentClub?.beer = "0"
+        currentClub?.wine = "0"
+        currentClub?.music = "0"
+        appDelegate.saveContext()
+        txtClubName.text = ""
+        txtClubStreet.text = ""
+        txtClubCity.text = ""
+        txtClubState.text = ""
+        txtClubZip.text = ""
+    }
+    
+    @IBAction func CancelClub(_ sender: Any) {
+        txtClubName.text = ""
+        txtClubStreet.text = ""
+        txtClubCity.text = ""
+        txtClubState.text = ""
+        txtClubZip.text = ""
+    }
 }
 

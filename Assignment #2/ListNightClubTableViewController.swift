@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class ListNightClubTableViewController: UITableViewController {
+    
+    var clubs:[NSManagedObject] = []
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,35 +21,70 @@ class ListNightClubTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadDataFromDatabase()
+        tableView.reloadData()
+    }
+    
+    
+    func loadDataFromDatabase() {
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSManagedObject>(entityName: "NightClub")
+        do {
+            clubs = try context.fetch(request)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return clubs.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ClubCell", for: indexPath)
+        let club = clubs[indexPath.row] as? NightClub
+        cell.textLabel?.text = club?.name
+        cell.detailTextLabel?.text = club?.city
+        cell.accessoryType = UITableViewCellAccessoryType.detailDisclosureButton
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            let club = clubs[indexPath.row] as? NightClub
+            let context = appDelegate.persistentContainer.viewContext
+            context.delete(club!)
+            do {
+                try context.save()
+            } catch {
+                fatalError("Error saving context: \(error)")
+            }
+            loadDataFromDatabase()
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
