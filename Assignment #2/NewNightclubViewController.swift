@@ -38,10 +38,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         currentClub?.city = txtClubCity.text
         currentClub?.state = txtClubState.text
         currentClub?.zipcode = txtClubZip.text
-        currentClub?.beer = "0"
-        currentClub?.wine = "0"
-        currentClub?.music = "0"
-        currentClub?.average = "0"
+        currentClub?.beer = "1.0"
+        currentClub?.wine = "1.0"
+        currentClub?.music = "1.0"
+        currentClub?.average = "1.0"
         appDelegate.saveContext()
         txtClubName.text = ""
         txtClubStreet.text = ""
