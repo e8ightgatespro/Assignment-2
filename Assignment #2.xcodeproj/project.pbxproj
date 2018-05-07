@@ -8,22 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		4E81904520A0950D00610148 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E81904420A0950D00610148 /* AppDelegate.swift */; };
-		4E81904720A0950D00610148 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E81904620A0950D00610148 /* ViewController.swift */; };
+		4E81904720A0950D00610148 /* NewNightclubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E81904620A0950D00610148 /* NewNightclubViewController.swift */; };
 		4E81904A20A0950D00610148 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E81904820A0950D00610148 /* Main.storyboard */; };
 		4E81904D20A0950D00610148 /* Assignment__2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E81904B20A0950D00610148 /* Assignment__2.xcdatamodeld */; };
 		4E81904F20A0950D00610148 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E81904E20A0950D00610148 /* Assets.xcassets */; };
 		4E81905220A0950D00610148 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E81905020A0950D00610148 /* LaunchScreen.storyboard */; };
+		4E81905C20A0A51000610148 /* NightClubRatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E81905B20A0A51000610148 /* NightClubRatingViewController.swift */; };
+		4E81905E20A0A53200610148 /* NightClubMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E81905D20A0A53200610148 /* NightClubMapViewController.swift */; };
+		4E81906020A0A5A100610148 /* ListNightClubTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E81905F20A0A5A100610148 /* ListNightClubTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4E81904120A0950D00610148 /* Assignment #2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Assignment #2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E81904420A0950D00610148 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4E81904620A0950D00610148 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4E81904620A0950D00610148 /* NewNightclubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNightclubViewController.swift; sourceTree = "<group>"; };
 		4E81904920A0950D00610148 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4E81904C20A0950D00610148 /* Assignment__2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Assignment__2.xcdatamodel; sourceTree = "<group>"; };
 		4E81904E20A0950D00610148 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E81905120A0950D00610148 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E81905320A0950D00610148 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E81905B20A0A51000610148 /* NightClubRatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightClubRatingViewController.swift; sourceTree = "<group>"; };
+		4E81905D20A0A53200610148 /* NightClubMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightClubMapViewController.swift; sourceTree = "<group>"; };
+		4E81905F20A0A5A100610148 /* ListNightClubTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNightClubTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +63,15 @@
 			isa = PBXGroup;
 			children = (
 				4E81904420A0950D00610148 /* AppDelegate.swift */,
-				4E81904620A0950D00610148 /* ViewController.swift */,
+				4E81904620A0950D00610148 /* NewNightclubViewController.swift */,
 				4E81904820A0950D00610148 /* Main.storyboard */,
 				4E81904E20A0950D00610148 /* Assets.xcassets */,
 				4E81905020A0950D00610148 /* LaunchScreen.storyboard */,
 				4E81905320A0950D00610148 /* Info.plist */,
 				4E81904B20A0950D00610148 /* Assignment__2.xcdatamodeld */,
+				4E81905B20A0A51000610148 /* NightClubRatingViewController.swift */,
+				4E81905D20A0A53200610148 /* NightClubMapViewController.swift */,
+				4E81905F20A0A5A100610148 /* ListNightClubTableViewController.swift */,
 			);
 			path = "Assignment #2";
 			sourceTree = "<group>";
@@ -139,8 +148,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E81904720A0950D00610148 /* ViewController.swift in Sources */,
+				4E81906020A0A5A100610148 /* ListNightClubTableViewController.swift in Sources */,
+				4E81904720A0950D00610148 /* NewNightclubViewController.swift in Sources */,
+				4E81905C20A0A51000610148 /* NightClubRatingViewController.swift in Sources */,
 				4E81904D20A0950D00610148 /* Assignment__2.xcdatamodeld in Sources */,
+				4E81905E20A0A53200610148 /* NightClubMapViewController.swift in Sources */,
 				4E81904520A0950D00610148 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
