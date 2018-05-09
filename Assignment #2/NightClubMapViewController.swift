@@ -10,23 +10,20 @@ import UIKit
 import MapKit
 import CoreData
 
-class NightClubMapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+class NightClubMapViewController: UIViewController, MKMapViewDelegate {
    
     @IBOutlet weak var mapView: MKMapView!
     
     var clubs: [NightClub] = []
-    var locationManager: CLLocationManager!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        
         mapView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSManagedObject>(entityName: "NightClub")
